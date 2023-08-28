@@ -28,24 +28,41 @@
             <button class="rounded-lg btn-primary text-white text-xl font-bold py-4 px-10">Sign Up</button>
         </div>
 
-       <div class="flex flex-col items-center">
-        <h1 class="text-6xl font-bold text-center mt-12">Apple Iphone 13 Pro Max</h1>
-        <p class="mt-6 text-center text-[#706F6F] text-lg">There are many variations of passages of Lorem Ipsum available, but the majority <br>
-             have suffered alteration in some form, by injected humou.</p>
-             <button class="rounded-lg btn-primary text-white text-xl font-bold my-8 py-4 px-10">Buy Now</button>
-       </div>
+        <div class="flex flex-col items-center">
+            <h1 class="text-6xl font-bold text-center mt-12">Apple Iphone 13 Pro Max</h1>
+            <p class="mt-6 text-center text-[#706F6F] text-lg">There are many variations of passages of Lorem Ipsum
+                available, but the majority <br>
+                have suffered alteration in some form, by injected humou.</p>
+            <button class="rounded-lg btn-primary text-white text-xl font-bold my-8 py-4 px-10">Buy Now</button>
+        </div>
 
-       <!-- banner images -->
-       <div class="flex justify-center items-end gap-16 mt-6 mb-20">
-        <img class="w-[200px]" src="./images/banner.png" alt="">
-        <img class="w-[270px]" src="./images/banner.png" alt="">
-        <img class="w-[200px]" src="./images/banner.png" alt="">
-       </div>
+        <!-- banner images -->
+        <div class="flex justify-center items-end gap-16 mt-6 mb-20">
+            <img class="w-[200px]" src="./images/banner.png" alt="">
+            <img class="w-[270px]" src="./images/banner.png" alt="">
+            <img class="w-[200px]" src="./images/banner.png" alt="">
+        </div>
     </header>
     <main>
+        <h1 class="text-3xl font-semibold text-[#100F0F] text-center py-7">Search your phone</h1>
+        <div class="flex justify-center px-9 mb-10">
+            <input id="input-field" type="text" placeholder="Search your phone"
+                class="input text-base input-bordered h-12 w-1/2 bg-[#100F0F0D]" />
+            <button onclick="handleSearch()" class="rounded-lg btn-primary text-white text-xl font-medium h-12 px-6">Buy
+                Now</button>
+        </div>
         <section>
+            <div id="loading-dots" class="hidden">
+                <div class="flex justify-center my-32">
+                    <span class="loading loading-dots loading-md"></span>
+                </div>
+            </div>
             <div id="phones-container" class="grid grid-cols-3 gap-10">
 
+            </div>
+            <div class="flex flex-col items-center">
+                <button id="show-all-btn"
+                    class="rounded-lg btn-primary text-white text-xl font-bold my-8 py-4 px-10 hidden">Show All</button>
             </div>
         </section>
     </main>

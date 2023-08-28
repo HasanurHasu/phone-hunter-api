@@ -1,13 +1,24 @@
-const phoneLoad = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const phoneLoad = async (searchText) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
     const phones = data.data;
     displayPhones(phones);
 }
 
 const displayPhones = phones => {
-    console.log(phones);
+ 
     const phonesContainer = document.getElementById('phones-container');
+    phonesContainer.innerHTML = "";
+
+    const showAllBtn = document.getElementById('show-all-btn');
+    if(phones.length > 9){
+        showAllBtn.classList.remove('hidden');
+    }else{
+        showAllBtn.classList.add('hidden');
+    }
+
+    phones = phones.slice(0, 9);
+
     phones.forEach(phone => {
         const div = document.createElement('div');
         div.classList = `card bg-base-100 border-[1px] border-[#CFCFCF]	border-solid round-sm`;
@@ -23,8 +34,27 @@ const displayPhones = phones => {
         </div>
         </div>  
         `;
-    phonesContainer.appendChild(div);
+        phonesContainer.appendChild(div);
+        
     });
+    loadingDots(false);
 }
 
-phoneLoad();
+const handleSearch = () => {
+    loadingDots(true);
+    const inputField = document.getElementById('input-field');
+    const inputFieldValue = inputField.value;
+    phoneLoad(inputFieldValue);
+}
+
+const loadingDots = (isLoading) =>{
+    const loading = document.getElementById('loading-dots');
+    
+    if(isLoading){
+        loading.classList.remove('hidden');
+    }else {
+        loading.classList.add('hidden');
+    }
+}
+
+// phoneLoad();
