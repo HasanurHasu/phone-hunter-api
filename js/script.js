@@ -1,11 +1,11 @@
-const phoneLoad = async (searchText) => {
+const phoneLoad = async (searchText, isShowAll) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
     const phones = data.data;
-    displayPhones(phones);
+    displayPhones(phones, isShowAll);
 }
 
-const displayPhones = phones => {
+const displayPhones = (phones, isShowAll) => {
     console.log(phones);
 
     const phonesContainer = document.getElementById('phones-container');
@@ -18,7 +18,9 @@ const displayPhones = phones => {
         showAllBtn.classList.add('hidden');
     }
 
-    phones = phones.slice(0, 9);
+    if(!isShowAll){
+        phones = phones.slice(0, 9);
+    }
 
     phones.forEach(phone => {
         const div = document.createElement('div');
@@ -41,11 +43,11 @@ const displayPhones = phones => {
     loadingDots(false);
 }
 
-const handleSearch = () => {
+const handleSearch = (isShowAll) => {
     loadingDots(true);
     const inputField = document.getElementById('input-field');
     const inputFieldValue = inputField.value;
-    phoneLoad(inputFieldValue);
+    phoneLoad(inputFieldValue, isShowAll);
 }
 
 const loadingDots = (isLoading) => {
@@ -58,6 +60,9 @@ const loadingDots = (isLoading) => {
     }
 }
 
+const handleShowAll = () =>{
+    handleSearch(true);
+}
 
 
 // phoneLoad();
