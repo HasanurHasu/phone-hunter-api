@@ -60,45 +60,60 @@
             <div id="phones-container" class="grid grid-cols-3 gap-10">
 
             </div>
-          <div id="show-all-btn" class="hidden">
-            <div class="flex flex-col items-center">
-                
-                <button onclick="handleShowAll()" class="rounded-lg btn-primary text-white text-lg font-medium my-8 py-2 px-10">Show More</button>
+            <div id="show-all-btn" class="hidden">
+                <div class="flex flex-col items-center">
+
+                    <button onclick="handleShowAll()"
+                        class="rounded-lg btn-primary text-white text-lg font-medium my-8 py-2 px-10">Show More</button>
+                </div>
             </div>
-          </div>
+
+
+            <!-- Open the modal using ID.showModal() method -->
+           
+            <dialog id="my_details_modal" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <div id="modal-container">
+                        
+                    </div>
+                   
+                </form>
+            </dialog>
+
+
         </section>
     </main>
 
     <hr>
     <footer class="footer p-10 text-black text-neutral-content">
         <div>
-          <span class="footer-title">Services</span> 
-          <a class="link link-hover">Branding</a>
-          <a class="link link-hover">Design</a>
-          <a class="link link-hover">Marketing</a>
-          <a class="link link-hover">Advertisement</a>
-        </div> 
-        <div>
-          <span class="footer-title">Company</span> 
-          <a class="link link-hover">About us</a>
-          <a class="link link-hover">Contact</a>
-          <a class="link link-hover">Jobs</a>
-          <a class="link link-hover">Press kit</a>
-        </div> 
-        <div>
-          <span class="footer-title">Legal</span> 
-          <a class="link link-hover">Terms of use</a>
-          <a class="link link-hover">Privacy policy</a>
-          <a class="link link-hover">Cookie policy</a>
+            <span class="footer-title">Services</span>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
         </div>
         <div>
-            <span class="footer-title">Company</span> 
+            <span class="footer-title">Company</span>
             <a class="link link-hover">About us</a>
             <a class="link link-hover">Contact</a>
             <a class="link link-hover">Jobs</a>
             <a class="link link-hover">Press kit</a>
-          </div> 
-      </footer>
+        </div>
+        <div>
+            <span class="footer-title">Legal</span>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+        </div>
+        <div>
+            <span class="footer-title">Company</span>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+        </div>
+    </footer>
     <script src="./js/script.js"></script>
 </body>
 
