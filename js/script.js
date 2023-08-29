@@ -79,7 +79,7 @@ const showPhoneDetails = (phoneData) => {
     const modalContainer = document.getElementById('modal-container');
     modalContainer.innerHTML = `
     <div class="flex flex-col items-center">
-    <img src="${phoneData.image}" alt="">
+    <img class="w-32" src="${phoneData.image}" alt="">
     </div>
     <h3 class="font-bold text-lg">${phoneData.name}</h3>
      <p class="py-1 text-sm text-left">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
